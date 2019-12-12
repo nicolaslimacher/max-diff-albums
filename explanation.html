@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="maxdiff.css">
+
+    <title>maxdiff</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">NICO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">rank</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="results.html">results</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="explanation.html">what is maxdiff? <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- headings -->
+    <div class="container">
+      <h1 class="display-3">max-diff album ranking</h1>
+      <h1 class="display-5">a brief explanation, shamelessly stolen from reddit</h1>
+      <p class="text-justify">For a variety of reasons, we usually don't really like
+        traditional ranking methods where each participant assigns a rank number to
+        each item because studies show that most people can't handle that task. Their
+        top and bottom ranked items may reflect their true preferences, but it is a
+        toss up if their middle ranked items actually reflect how they truly feel.
+        Instead let's use a different technique called MaxDiff.</p>
+      <p class="text-justify">MaxDiff is different from traditional rankings in the
+        following ways: Instead of having everyone provide a straight ranking
+        (i.e. album X is "1", album Y is "2"), participants instead are presented
+        sets containing four teams. In each set they choose the album they feel
+        is the best and worst of the four</p>
+      <p class="text-justify">We can use some math (Hierarchical Bayes estimation
+        procedure) at the end of the study to calculate a full ranking for each
+        respondent. This ranking system has an advantage over traditional rankings
+        in the following ways:</p>
+      <ul>
+        <li>
+          <p class="text-justify">Shows distance between ranks. The distance between
+            items ranked 1 and 2 need not be the same as the distance between items
+            ranked 3 and 4. This lets us see natural breaks in how teams are perceived,
+            which allows us to group albums into TIERS</p>
+        </li>
+        <li>
+          <p class="text-justify">More accurately reflects middle ranked teams. Research
+             on research (yes, that is a real thing) shows that people aren't really
+             able to rank a long list of items. They can tell you their top two or three
+             items and their last few items, but it is a toss up if their middle ranked
+             items really reflect their true preferences. This method gets around that
+             by breaking the task down into sets of four, so that everyone's middle
+             ranked items actually reflect their true opinions.</p>
+        </li>
+        <li>
+          <p class="text-justify">Gives the analyst conducting the poll the ability
+            to identify and throw out bad respondents that don't know enough about
+            the teams to give meaningful opinions.</p>
+        </li>
+      </ul>
+    </div>
+
+
+  </body>
+</html>

@@ -8,7 +8,51 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="maxdiff.css">
-    <title>Home</title>
+
+    <!--
+    <script>
+      function savePollToFirebase(best, worst, middle, middle2) {
+        var results = {
+          best: best
+          worst: worst
+          middle: middle
+          middle: middle2
+        };
+
+        firebase.database().ref('subscription-entries').push().set(results)
+          .then(function(snapshot) {
+              success(); // some success method
+          }, function(error) {
+              console.log('error' + error);
+              error(); // some error method
+          });
+
+      }
+    </script>
+    -->
+
+    <!--
+    <script>
+      function PopulatePoll(best, worst, middle, middle2) {
+        var albums = {
+          best: best
+          worst: worst
+          middle: middle
+          middle: middle2
+        };
+
+        firebase.database().ref('subscription-entries').push().set(results)
+          .then(function(snapshot) {
+              success(); // some success method
+          }, function(error) {
+              console.log('error' + error);
+              error(); // some error method
+          });
+
+      }
+    </script>
+    -->
+    <title>rank</title>
   </head>
   <body>
 
@@ -26,6 +70,9 @@
           <li class="nav-item">
             <a class="nav-link" href="results.html">results</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="explanation.html">what is maxdiff?</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -34,6 +81,36 @@
     <div class="container">
       <h1 class="display-3">max-diff album ranking</h1>
     </div>
+
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAep7HAz5dN0466up9-pudS9ZUsoA_zgFk",
+        authDomain: "maxdiff-album.firebaseapp.com",
+        databaseURL: "https://maxdiff-album.firebaseio.com",
+        projectId: "maxdiff-album",
+        storageBucket: "maxdiff-album.appspot.com",
+        messagingSenderId: "528132652024",
+        appId: "1:528132652024:web:5f2ff1aa8c04fc46adf40d"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
 
     <!-- album ranking choice -->
     <div class="container">
@@ -93,12 +170,5 @@
         </div>
       </div>
     </div>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
