@@ -9,49 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="maxdiff.css">
 
-    <!--
-    <script>
-      function savePollToFirebase(best, worst, middle, middle2) {
-        var results = {
-          best: best
-          worst: worst
-          middle: middle
-          middle: middle2
-        };
-
-        firebase.database().ref('subscription-entries').push().set(results)
-          .then(function(snapshot) {
-              success(); // some success method
-          }, function(error) {
-              console.log('error' + error);
-              error(); // some error method
-          });
-
-      }
-    </script>
-    -->
-
-    <!--
-    <script>
-      function PopulatePoll(best, worst, middle, middle2) {
-        var albums = {
-          best: best
-          worst: worst
-          middle: middle
-          middle: middle2
-        };
-
-        firebase.database().ref('subscription-entries').push().set(results)
-          .then(function(snapshot) {
-              success(); // some success method
-          }, function(error) {
-              console.log('error' + error);
-              error(); // some error method
-          });
-
-      }
-    </script>
-    -->
     <title>rank</title>
   </head>
   <body>
@@ -82,8 +39,9 @@
       <h1 class="display-3">max-diff album ranking</h1>
     </div>
 
-    
 
+
+    <script src="script.js">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -92,7 +50,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -112,63 +70,75 @@
       firebase.initializeApp(firebaseConfig);
     </script>
 
-    <!-- album ranking choice -->
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          worst option
-        </div>
-        <div class="col">
-          album
-        </div>
-        <div class="col">
-          best option
-        </div>
-       </div>
-      <div class="row">
-        <div class="col">
-          <input type="radio" name="worst" value="album-1-worst">
-        </div>
-        <div class="col">
-          album 1
-        </div>
-        <div class="col">
-          <input type="radio" name="best" value="album-1-best">
-        </div>
+
+  <!-- album ranking choice -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        worst option
       </div>
-      <div class="row">
-        <div class="col">
-          <input type="radio" name="worst" value="album-2-worst">
-        </div>
-        <div class="col">
-          album 2
-        </div>
-        <div class="col">
-          <input type="radio" name="best" value="album-2-best">
-        </div>
+      <div class="col">
+        album
       </div>
-      <div class="row">
-        <div class="col">
-          <input type="radio" name="worst" value="album-3-worst">
-        </div>
-        <div class="col">
-          album 3
-        </div>
-        <div class="col">
-          <input type="radio" name="best" value="album-3-best">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <input type="radio" name="worst" value="album-4-worst">
-        </div>
-        <div class="col">
-          album 4
-        </div>
-        <div class="col">
-          <input type="radio" name="best" value="album-4-best">
-        </div>
+      <div class="col">
+        best option
       </div>
     </div>
-  </body>
+    <div class="row">
+      <div class="col">
+        <input type="radio" name="worst" value="album-1-worst">
+      </div>
+      <div class="col" id="album-1-name">
+      </div>
+      <div class="col">
+        <input type="radio" name="best" value="album-1-best">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <input type="radio" name="worst" value="album-2-worst">
+      </div>
+      <div class="col" id="album-2-name">
+      </div>
+      <div class="col">
+        <input type="radio" name="best" value="album-2-best">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <input type="radio" name="worst" value="album-3-worst">
+      </div>
+      <div class="col" id="album-3-name">
+      </div>
+      <div class="col">
+        <input type="radio" name="best" value="album-3-best">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <input type="radio" name="worst" value="album-4-worst">
+      </div>
+      <div class="col" id="album-4-name">
+      </div>
+      <div class="col">
+        <input type="radio" name="best" value="album-4-best">
+      </div>
+    </div>
+  </div>
+
+  <div class="container justify-content-center">
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-primary" onclick="populatePoll()">new ranking</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary" onclick="savePollToFirebase()">submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = populatePoll();
+  </script>
+</body>
 </html>
