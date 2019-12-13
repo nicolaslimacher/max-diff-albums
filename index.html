@@ -73,67 +73,63 @@
 
   <!-- album ranking choice -->
   <div class="container">
-    <div class="row">
-      <div class="col">
+    <div class="row font-weight-bold text-nowrap">
+      <div class="col-2 text-center">
         worst option
       </div>
-      <div class="col">
+      <div class="col-8 text-center">
         album
       </div>
-      <div class="col">
+      <div class="col-2 text-center">
         best option
       </div>
     </div>
-    <div class="row">
-      <div class="col">
+    <div class="row text-center">
+      <div class="col-2">
         <input type="radio" name="worst" value="album-1-worst">
       </div>
-      <div class="col" id="album-1-name">
+      <div class="col-8" id="album-1-name">
       </div>
-      <div class="col">
+      <div class="col-2">
         <input type="radio" name="best" value="album-1-best">
       </div>
     </div>
-    <div class="row">
-      <div class="col">
+    <div class="row text-center">
+      <div class="col-2">
         <input type="radio" name="worst" value="album-2-worst">
       </div>
-      <div class="col" id="album-2-name">
+      <div class="col-8" id="album-2-name">
       </div>
-      <div class="col">
+      <div class="col-2">
         <input type="radio" name="best" value="album-2-best">
       </div>
     </div>
-    <div class="row">
-      <div class="col">
+    <div class="row text-center">
+      <div class="col-2">
         <input type="radio" name="worst" value="album-3-worst">
       </div>
-      <div class="col" id="album-3-name">
+      <div class="col-8" id="album-3-name">
       </div>
-      <div class="col">
+      <div class="col-2">
         <input type="radio" name="best" value="album-3-best">
       </div>
     </div>
-    <div class="row">
-      <div class="col">
+    <div class="row text-center">
+      <div class="col-2">
         <input type="radio" name="worst" value="album-4-worst">
       </div>
-      <div class="col" id="album-4-name">
+      <div class="col-8" id="album-4-name">
       </div>
-      <div class="col">
+      <div class="col-2">
         <input type="radio" name="best" value="album-4-best">
       </div>
     </div>
   </div>
 
-  <div class="container justify-content-center">
-    <div class="row">
-      <div class="col">
-        <button type="button" class="btn btn-primary" onclick="populatePoll()">new ranking</button>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-primary" onclick="savePollToFirebase()">submit</button>
-      </div>
+  <div class="container">
+    <div class="button-box col-lg-12">
+      <button type="button" class="btn btn-primary" onclick="savePollToFirebase()">submit</button>
+      <button type="button" class="btn btn-secondary" onclick="populatePoll()">new ranking</button>
     </div>
   </div>
 
